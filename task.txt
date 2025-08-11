@@ -1,0 +1,1 @@
+Build a simple simulation (or working prototype) where a camera feed detects motion using OpenCV or YOLO. Once motion is detected, trigger a simulated drone ‘takeoff’ (can just be a change in state or log). Stream the video to a basic web or mobile app frontend. Push a notification or alert when motion is detected." 
