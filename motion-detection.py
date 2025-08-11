@@ -62,7 +62,7 @@ while True:
     if initial_frame is not None:
         prev_frame = frame
 
-    # Exit using q
+    # Exit using q 
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
 
