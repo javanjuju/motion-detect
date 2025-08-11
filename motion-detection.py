@@ -56,7 +56,7 @@ while True:
             motion_detected = False  # Reset the motion flag after sending
 
         # Show frame with contours
-        cv.imshow('Motion Detection', frame)
+        cv.imshow('Webcam Feed', frame)
 
     # Set the previous frame
     if initial_frame is not None:
