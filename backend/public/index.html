@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>OpenCV Stream Viewer</title>
+		<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				background: #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h3><strong>Motion Detection</strong></h3>
+		</div>
+		<div>
+			<img id="video-frame" alt="Video Stream" />
+		</div>
+
+		<script>
+			// Connect to the Socket.IO server (same origin)
+			const socket = io();
+
+			const imageElement = document.getElementById("video-frame");
+
+			socket.on("frame", data => {
+				// data should be a full base64 string like "data:image/jpeg;base64,..."
+				console.log("Frame Received");
+				console.log(data);
+				imageElement.src = `data:image/jpeg;base64,${data.image}`;
+			});
+		</script>
+	</body>
+</html>

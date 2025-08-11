@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import { Server } from "socket.io";
 import http from "http";
-import fs from "fs";
+import path from "path";
 
 // Create an Express app and HTTP server
 const app = express();
@@ -13,6 +13,9 @@ const io = new Server(httpServer, {
 	},
 });
 
+const publicPath = path.resolve("public");
+app.use(express.static(publicPath));
+
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
 	res.send({ message: "Welcome to the server" }).status(200);
 });
@@ -21,7 +24,7 @@ io.on("connection", socket => {
 	console.log(`Client connected. ID ${socket.id}`);
 
 	socket.on("motion-detected", data => {
-		io.emit("motion-detected", data);
+		io.emit("frame", data);
 	});
 
 	socket.on("disconnect", () => {

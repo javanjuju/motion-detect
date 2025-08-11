@@ -6,7 +6,7 @@ import socketio
 
 #create a socket io client and connect to a socket io server at localhost:5000
 sio = socketio.Client()
-sio.connect("http://localhost:5000")
+sio.connect("http://localhost:3000")
 
 cap = cv.VideoCapture(0)
 initial_frame = None

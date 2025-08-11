@@ -1,25 +1,26 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "express": "^5.1.0",
-    "socket.io": "^4.8.1"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.3",
-    "@types/node": "^24.2.1",
-    "typescript": "^5.9.2"
-  },
-  "optionalDependencies": {
-    "bufferutil": "^4.0.9",
-    "utf-8-validate": "^6.0.5"
-  }
+	"name": "backend",
+	"version": "1.0.0",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "tsc; node server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"express": "^5.1.0",
+		"socket.io": "^4.8.1"
+	},
+	"devDependencies": {
+		"@types/express": "^5.0.3",
+		"@types/node": "^24.2.1",
+		"typescript": "^5.9.2"
+	},
+	"optionalDependencies": {
+		"bufferutil": "^4.0.9",
+		"utf-8-validate": "^6.0.5"
+	}
 }
