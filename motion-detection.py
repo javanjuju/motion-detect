@@ -5,8 +5,8 @@ import sys
 import socketio
 
 #create a socket io client and connect to a socket io server at localhost:5000
-# sio = socketio.Client()
-# sio.connect("http://localhost:5000")
+sio = socketio.Client()
+sio.connect("http://localhost:5000")
 
 cap = cv.VideoCapture(0)
 initial_frame = None
@@ -52,7 +52,7 @@ while True:
         if motion_detected:
             print(f"Motion Detected")
             base_64_frame = encode_frame(frame)
-            # sio.emit('motion-detected', {'image': base_64_frame})
+            sio.emit('motion-detected', {'image': base_64_frame})
             motion_detected = False  # Reset the motion flag after sending
 
         # Show frame with contours
